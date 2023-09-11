@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Glint</title>
+    <meta name="description" content>
+    <meta name="author" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script nonce="037a20ea-191f-47e3-9c4f-a23ae013ec61">
+        (function(w, d) {
+            ! function(bg, bh, bi, bj) {
+                bg[bi] = bg[bi] || {};
+                bg[bi].executed = [];
+                bg.zaraz = {
+                    deferred: [],
+                    listeners: []
+                };
+                bg.zaraz.q = [];
+                bg.zaraz._f = function(bk) {
+                    return async function() {
+                        var bl = Array.prototype.slice.call(arguments);
+                        bg.zaraz.q.push({
+                            m: bk,
+                            a: bl
+                        })
+                    }
+                };
+                for (const bm of ["track", "set", "debug"]) bg.zaraz[bm] = bg.zaraz._f(bm);
+                bg.zaraz.init = () => {
+                    var bn = bh.getElementsByTagName(bj)[0],
+                        bo = bh.createElement(bj),
+                        bp = bh.getElementsByTagName("title")[0];
+                    bp && (bg[bi].t = bh.getElementsByTagName("title")[0].text);
+                    bg[bi].x = Math.random();
+                    bg[bi].w = bg.screen.width;
+                    bg[bi].h = bg.screen.height;
+                    bg[bi].j = bg.innerHeight;
+                    bg[bi].e = bg.innerWidth;
+                    bg[bi].l = bg.location.href;
+                    bg[bi].r = bh.referrer;
+                    bg[bi].k = bg.screen.colorDepth;
+                    bg[bi].n = bh.characterSet;
+                    bg[bi].o = (new Date).getTimezoneOffset();
+                    if (bg.dataLayer)
+                        for (const bt of Object.entries(Object.entries(dataLayer).reduce(((bu, bv) => ({ ...bu[1],
+                                ...bv[1]
+                            })), {}))) zaraz.set(bt[0], bt[1], {
+                            scope: "page"
+                        });
+                    bg[bi].q = [];
+                    for (; bg.zaraz.q.length;) {
+                        const bw = bg.zaraz.q.shift();
+                        bg[bi].q.push(bw)
+                    }
+                    bo.defer = !0;
+                    for (const bx of [localStorage, sessionStorage]) Object.keys(bx || {}).filter((bz => bz.startsWith("_zaraz_"))).forEach((by => {
+                        try {
+                            bg[bi]["z_" + by.slice(7)] = JSON.parse(bx.getItem(by))
+                        } catch {
+                            bg[bi]["z_" + by.slice(7)] = bx.getItem(by)
+                        }
+                    }));
+                    bo.referrerPolicy = "origin";
+                    bo.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bg[bi])));
+                    bn.parentNode.insertBefore(bo, bn)
+                };
+                ["complete", "interactive"].includes(bh.readyState) ? zaraz.init() : bg.addEventListener("DOMContentLoaded", zaraz.init)
+            }(w, d, "zarazData", "script");
+        })(window, document);
+    </script>
+</head>
+
+<body id="top">
+    <header class="s-header">
+        <div class="header-logo"> <a class="site-logo" href="index.html"> <img src="images/logo.png" alt="Homepage"> </a></div>
+        <nav class="header-nav"><a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+            <div class="header-nav__content">
+                <h3>Navigation</h3>
+                <ul class="header-nav__list">
+                    <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
+                    <li><a class="smoothscroll" href="#about" title="about">About</a></li>
+                    <li><a class="smoothscroll" href="#services" title="services">Services</a></li>
+                    <li><a class="smoothscroll" href="#works" title="works">Works</a></li>
+                    <li><a class="smoothscroll" href="#clients" title="clients">Clients</a></li>
+                    <li><a class="smoothscroll" href="#contact" title="contact">Contact</a></li>
+                </ul>
+                <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href="#0">voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
+                <ul class="header-nav__social">
+                    <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li> <a href="#"><i class="fa fa-behance"></i></a></li>
+                    <li> <a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+            </div>
+        </nav><a class="header-menu-toggle" href="#0"> <span class="header-menu-text">Menu</span> <span class="header-menu-icon"></span> </a></header>
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="https://images.unsplash.com/photo-1622737133809-d95047b9e673?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
+        data-natural-width="3000" data-natural-height="2000" data-position-y="center">
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+        <div class="home-content">
+            <div class="row home-content__main">
+                <h3>Welcome to redArt</h3>
+                <h1> We provide <br> an unified <br> platform to <br> artists and creatives.</h1>
+                <div class="home-content__buttons"> <a href="#contact" class="smoothscroll btn btn--stroke"> Start a Project </a> <a href="#about" class="smoothscroll btn btn--stroke"> More About Us </a></div>
+            </div>
+            <div class="home-content__scroll"> <a href="#about" class="scroll-link smoothscroll"> <span>Scroll Down</span> </a></div>
+            <div class="home-content__line"></div>
+        </div>
+        <ul class="home-social">
+            <li> <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
+            <li> <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a></li>
+            <li> <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
+            <li> <a href="#0"><i class="fa fa-behance" aria-hidden="true"></i><span>Behance</span></a></li>
+            <li> <a href="#0"><i class="fa fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a></li>
+        </ul>
+    </section>
+    <section id="about" class="s-about">
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--dark">Hello There</h3>
+                <h1 class="display-1 display-1--light">We Are redArt</h1>
+            </div>
+        </div>
+        <div class="row about-desc" data-aos="fade-up">
+            <div class="col-full">
+                <p> We don't do anything. It's just a fun project so don't expect something amazing from us. However, you can sign up and increase our traction. <br> Before you leave, just go through this stuff, you might fing something good. Even if you don't, we are not responsible for that. </p>
+            </div>
+        </div>
+        <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
+            <div class="col-block stats__col ">
+                <div class="stats__count">0</div>
+                <h5>Awards Received</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__counts">Only tea</div>
+                <h5> No Cups of Coffee</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__counts">Ghanta</div>
+                <h5>Projects Completed</h5>
+            </div>
+            <div class="col-block stats__col">
+                <div class="stats__countss">Millions of</div>
+                <h5>Disappointed Clients</h5>
+            </div>
+        </div>
+        <div class="about__line"></div>
+    </section>
+    <section id="services" class="s-services">
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">What We Do</h3>
+                <h1 class="display-2">We’ve got everything you need to ruin your life.</h1>
+            </div>
+        </div>
+        <div class="row services-list block-1-2 block-tab-full">
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon"> <i class="icon-paint-brush"></i></div>
+                <div class="service-text">
+                    <h3 class="h2">Brand Identity</h3>
+                    <p>Koi identity nhi, bas timepaas hai sab.</p>
+                </div>
+            </div>
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon"> <i class="icon-group"></i></div>
+                <div class="service-text">
+                    <h3 class="h2">Illustration</h3>
+                    <p>Mereko toh iski spelling bhi ni aati, google se copy kiya.</p>
+                </div>
+            </div>
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon"> <i class="icon-megaphone"></i></div>
+                <div class="service-text">
+                    <h3 class="h2">Marketing</h3>
+                    <p>ka ana kal.</p>
+                </div>
+            </div>
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon"> <i class="icon-earth"></i></div>
+                <div class="service-text">
+                    <h3 class="h2">Web Design</h3>
+                    <p>Sab akele karna padta hai, team ghanta kuch ni karti.</p>
+                </div>
+            </div>
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon"> <i class="icon-cube"></i></div>
+                <div class="service-text">
+                    <h3 class="h2">Packaging Design</h3>
+                    <p>Pehli baar yeh word suna hai.</p>
+                </div>
+            </div>
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon"><i class="icon-lego-block"></i></div>
+                <div class="service-text">
+                    <h3 class="h2">Web Development</h3>
+                    <p>Yeh bhi akele krna padta hai xD.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="works" class="s-works">
+        <div class="intro-wrap">
+            <div class="row section-header has-bottom-sep light-sep" data-aos="fade-up">
+                <div class="col-full">
+                    <h3 class="subhead">Recent Works</h3>
+                    <h1 class="display-2 display-2--light">Kuch recent work ni kiya, bas content ke liye topic add krna pada.</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row works-content">
+            <div class="col-full masonry-wrap">
+                <div class="masonry">
+                    <div class="masonry__brick" data-aos="fade-up">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-shutterbug.jpg" class="thumb-link" title="Shutterbug" data-size="1050x700"> <img src="images/portfolio/lady-shutterbug.jpg" srcset="images/portfolio/lady-shutterbug.jpg 1x, images/portfolio/lady-shutterbug@2x.jpg 2x" alt> </a></div>
+                            <div
+                                class="item-folio__text">
+                                <h3 class="item-folio__title"> Shutterbug</h3>
+                                <p class="item-folio__cat"> Branding</p>
+                        </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
+                        <div class="item-folio__caption">
+                            <p>Nothing to write because doremon is not helping me.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="masonry__brick" data-aos="fade-up">
+                    <div class="item-folio">
+                        <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-woodcraft.jpg" class="thumb-link" title="Woodcraft" data-size="1050x700"> <img src="images/portfolio/woodcraft.jpg" srcset="images/portfolio/woodcraft.jpg 1x, images/portfolio/woodcraft@2x.jpg 2x" alt> </a></div>
+                        <div
+                            class="item-folio__text">
+                            <h3 class="item-folio__title"> Woodcraft</h3>
+                            <p class="item-folio__cat"> Web Design</p>
+                    </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
+                    <div class="item-folio__caption">
+                        <p>Bas project de diya hai, aata kuch hai ni mereko.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry__brick" data-aos="fade-up">
+                <div class="item-folio">
+                    <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-beetle.jpg" class="thumb-link" title="The Beetle Car" data-size="1050x700"> <img src="images/portfolio/the-beetle.jpg" srcset="images/portfolio/the-beetle.jpg 1x, images/portfolio/the-beetle@2x.jpg 2x" alt> </a></div>
+                    <div
+                        class="item-folio__text">
+                        <h3 class="item-folio__title"> The Beetle</h3>
+                        <p class="item-folio__cat"> Web Development</p>
+                </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
+                <div class="item-folio__caption">
+                    <p>If you know the meaning of the Beetle, please fill the form and let me know.</p>
+                </div>
+            </div>
+        </div>
+        <div class="masonry__brick" data-aos="fade-up">
+            <div class="item-folio">
+                <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-grow-green.jpg" class="thumb-link" title="Grow Green" data-size="1050x700"> <img src="images/portfolio/grow-green.jpg" srcset="images/portfolio/grow-green.jpg 1x, images/portfolio/grow-green@2x.jpg 2x" alt> </a></div>
+                <div
+                    class="item-folio__text">
+                    <h3 class="item-folio__title"> Grow Green</h3>
+                    <p class="item-folio__cat"> Branding</p>
+            </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
+            <div class="item-folio__caption">
+                <p>Beti bachao, hariyali badhao aur yaha se bhag jao.</p>
+            </div>
+        </div>
+        </div>
+        <div class="masonry__brick" data-aos="fade-up">
+            <div class="item-folio">
+                <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-guitarist.jpg" class="thumb-link" title="Guitarist" data-size="1050x700"> <img src="images/portfolio/guitarist.jpg" srcset="images/portfolio/guitarist.jpg 1x, images/portfolio/guitarist@2x.jpg 2x" alt> </a></div>
+                <div
+                    class="item-folio__text">
+                    <h3 class="item-folio__title"> Guitarist</h3>
+                    <p class="item-folio__cat"> Web Design</p>
+            </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
+            <div class="item-folio__caption">
+                <p>Yeh guitar choro, kaam karlo. Sun lo meri baat, thode manners seekh lo.</p>
+            </div>
+        </div>
+        </div>
+        <div class="masonry__brick" data-aos="fade-up">
+            <div class="item-folio">
+                <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-palmeira.jpg" class="thumb-link" title="Palmeira" data-size="1050x700"> <img src="images/portfolio/palmeira.jpg" srcset="images/portfolio/palmeira.jpg 1x, images/portfolio/palmeira@2x.jpg 2x" alt> </a></div>
+                <div
+                    class="item-folio__text">
+                    <h3 class="item-folio__title"> Palmeira</h3>
+                    <p class="item-folio__cat"> Web Design</p>
+            </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
+            <div class="item-folio__caption">
+                <p>Yeh kuch toh hota hai, bas abhi wikipedia check krta hu. Aap bhi krlo.</p>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <section id="clients" class="s-clients">
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Our Clients</h3>
+                <h1 class="display-2">Koi clients ni hai hamare, bas cool banne ke liye likha hai.</h1>
+            </div>
+        </div>
+        <div class="row clients-outer" data-aos="fade-up">
+            <div class="col-full">
+                <div class="clients"><a href="#0" title class="clients__slide"><img src="images/clients/apple.png" /></a> <a href="#0" title class="clients__slide"><img src="images/clients/atom.png" /></a> <a href="#0" title class="clients__slide"><img src="images/clients/blackberry.png" /></a>                    <a href="#0" title class="clients__slide"><img src="images/clients/dropbox.png" /></a> <a href="#0" title class="clients__slide"><img src="images/clients/envato.png" /></a> <a href="#0" title class="clients__slide"><img src="images/clients/firefox.png" /></a>                    <a href="#0" title class="clients__slide"><img src="images/clients/joomla.png" /></a> <a href="#0" title class="clients__slide"><img src="images/clients/magento.png" /></a></div>
+            </div>
+        </div>
+        <div class="row clients-testimonials" data-aos="fade-up">
+            <div class="col-full">
+                <div class="testimonials">
+                    <div class="testimonials__slide">
+                        <p>Aage badho yaha se...</p><img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
+                        <div class="testimonials__info"> <span class="testimonials__name">Awaneesh Singh</span> <span class="testimonials__pos">CEO, Apple</span></div>
+                    </div>
+                    <div class="testimonials__slide">
+                        <p></p><img src="images/avatars/user-05.jpg"
+                            alt="Author image" class="testimonials__avatar">
+                        <div class="testimonials__info"> <span class="testimonials__name">Sejal Gupta</span> <span class="testimonials__pos">CEO, Google</span></div>
+                    </div>
+                    <div class="testimonials__slide">
+                        <p> I've already said don't expect anything from us.</p><img src="images/avatars/user-02.jpg"
+                            alt="Author image" class="testimonials__avatar">
+                        <div class="testimonials__info"> <span class="testimonials__name">Satya Nadella</span> <span class="testimonials__pos">CEO, Microsoft</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="s-contact">
+        <div class="overlay"></div>
+        <div class="contact__line"></div>
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Contact Us</h3>
+                <h1 class="display-2 display-2--light"> Don't reach out for a new project just say hello</h1>
+            </div>
+        </div>
+        <div class="row contact-content" data-aos="fade-up">
+            <div class="contact-primary">
+                <h3 class="h6">Send Us A Message</h3>
+                <form name="contactForm" id="contactForm" method="post" action novalidate="novalidate">
+                    <fieldset>
+                        <div class="form-field"> <input name="contactName" type="text" id="contactName" placeholder="Your Name" value minlength="2" required aria-required="true" class="full-width"></div>
+                        <div class="form-field"> <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value required aria-required="true" class="full-width"></div>
+                        <div class="form-field"> <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value class="full-width"></div>
+                        <div class="form-field"><textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required aria-required="true" class="full-width"></textarea></div>
+                        <div class="form-field"> <button class="full-width btn--primary">Submit</button>
+                            <div class="submit-loader">
+                                <div class="text-loader">Sending...</div>
+                                <div class="s-loader">
+                                    <div class="bounce1"></div>
+                                    <div class="bounce2"></div>
+                                    <div class="bounce3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="message-warning"> Something went wrong. Please try again.</div>
+                <div class="message-success"> Your message was sent, thank you!<br></div>
+            </div>
+            <div class="contact-secondary">
+                <div class="contact-info">
+                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
+                    <div class="cinfo">
+                        <h5>Where to Find Us</h5>
+                        <p> 1600 Amphitheatre Parkway<br> Mountain View, CA<br> 94043 US</p>
+                    </div>
+                    <div class="cinfo">
+                        <h5>Email Us At</h5>
+                        <p> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ed8e8283998c8e99ad8a818483999e849988c38e8280">[email&#160;protected]</a><br> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb92959d94bb9c9792958f88928f9ed5989496">[email&#160;protected]</a></p>
+                    </div>
+                    <div class="cinfo">
+                        <h5>Call Us At</h5>
+                        <p> Phone: (+63) 555 1212<br> Mobile: (+63) 555 0100<br> Fax: (+63) 555 0101</p>
+                    </div>
+                    <ul class="contact-social">
+                        <li> <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li> <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li> <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li> <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                        <li> <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="row footer-main">
+            <div class="col-six tab-full left footer-desc">
+                <div class="footer-logo"></div> There's nothing special here, you can skip. However, you can waste your time here and we would love that.</div>
+            <div class="col-six tab-full right footer-subscribe">
+                <h4>Get Notified</h4>
+                <p>Kaam toh ham kuch karte ni hai, notification ka kya kroge?</p>
+                <div class="subscribe-form">
+                    <form id="mc-form" class="group" novalidate="true"> <input type="email" value name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required> <input type="submit" name="subscribe" value="Subscribe"> <label for="mc-email" class="subscribe-message"></label></form>
+                </div>
+            </div>
+        </div>
+        <div class="row footer-bottom">
+            <div class="col-twelve">
+                <div class="copyright"> <span>© Copyright redArt 2022</span></div>
+                <div class="go-top"> <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"8034fde25ba0848f","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.8.0","si":100}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
